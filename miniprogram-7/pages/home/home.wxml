@@ -1,0 +1,22 @@
+<!--pages/home/home.wxml-->
+<!--展示輪播圖-->
+<w-swiper list="{{banners}}"/>
+
+<!--推薦數據的展示-->
+<w-recommend recommends="{{recommends}}"/>
+
+<!--今日流行-->
+<w-popular></w-popular>
+
+<!--工具栏-->
+<w-tabcontrol titles="{{titles}}" bindtap="handleTabClick"/>
+
+<!--商品展示-->
+<view class="goods">
+  <block wx:for='{{goods[currentType].list}}'>
+    <view>{{item.title}}</view>
+  </block>
+</view>
+
+<!--回到頂部-->
+<w-backtop wx:if="{{showBacktop}}"/>
